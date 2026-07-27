@@ -280,7 +280,7 @@ const Hero = () => {
             <motion.a
               target="_blank"
               href={
-                "https://drive.google.com/file/d/1SLaKsrAWWreDuOED_4eik44IxbsNYvCs/view?usp=sharing"
+                "https://drive.google.com/file/d/1NadiAylOMfpuChQD6PRmJ8RNAFb-_W3Q/view?usp=sharing"
               }
               initial={{
                 opacity: 0,
