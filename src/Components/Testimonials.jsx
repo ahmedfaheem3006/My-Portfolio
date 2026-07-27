@@ -24,7 +24,6 @@ const Testimonials = () => {
             perPage: 3,
             focus: "center",
             gap: "20px",
-            isNavigation: true,
             // autoplay: true,
             type: "loop",
             rewind: true,
@@ -36,9 +35,10 @@ const Testimonials = () => {
                 key={item.id}>
                 <div className="relative">
                   <img
+                    loading="lazy"
                     className="w-[90px] h-[90px] mx-auto rounded-full border-[5px]  border-[#111] "
                     src={item.img}
-                    alt="Image 1"
+                    alt={item.name}
                   />
                   <div className="flex items-center justify-center text-orange-600 my-2 gap-1">
                     <svg
@@ -92,7 +92,12 @@ const Testimonials = () => {
                       <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
                     </svg>
                   </div>
-                  <h2 className=" font-bold text-xl mb-4">{item.name}</h2>
+                  <h2 className=" font-bold text-xl mb-1">{item.name}</h2>
+                  {item.role && (
+                    <small className="text-gray-600 dark:text-gray-400 font-semibold block mb-3">
+                      {item.role}
+                    </small>
+                  )}
 
                   <svg
                     stroke="currentColor"

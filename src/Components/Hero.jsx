@@ -1,4 +1,4 @@
-import HeroImg from "../assets/hero img.png";
+import HeroImg from "../assets/Profile_logo_without_BG.png";
 import { motion } from "framer-motion";
 import { FaFacebookF } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa6";
@@ -7,41 +7,44 @@ import { IoLogoInstagram } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import { FaCloudDownloadAlt } from "react-icons/fa";
 import { FaAngleDoubleDown } from "react-icons/fa";
+import { FaPaperPlane } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   // array of social icons
   let dataSocial = [
     {
       id: 1,
-      link: "https://www.facebook.com/tata.rayan.5",
+      link: "https://web.facebook.com/ahmed.fahem.12764",
       icon: <FaFacebookF />,
       bgColor: "#1877f2",
       show: 2.7,
     },
     {
       id: 2,
-      link: "https://github.com/Mostafa-Rayan1924",
+      link: "https://github.com/ahmedfaheem3006",
       icon: <FaGithub />,
       bgColor: "#6e5494",
       show: 2.9,
     },
     {
       id: 3,
-      link: "https://www.instagram.com/mostafarayan7/",
+      link: "https://www.instagram.com/ahmed_faheem_66/",
       icon: <IoLogoInstagram />,
       bgColor: "#fe3e78",
       show: 3.1,
     },
     {
       id: 4,
-      link: "https://wa.me/+2001156581025",
+      link: "https://wa.me/+2001220708037",
       icon: <FaWhatsapp />,
       bgColor: "#25d366",
       show: 3.3,
     },
     {
       id: 5,
-      link: "https://www.linkedin.com/in/mostafa-rayan-86305b247/?fbclid=IwAR0PKgq_1wc3l0TJMIoH6AK9lxbVVgeUZRbrQrXEZuu_bYssTZNhtViJTcM",
+      link: "https://www.linkedin.com/in/ahmed-faheem302/",
       icon: <FaLinkedinIn />,
       bgColor: "#0a66c2",
       show: 3.5,
@@ -74,7 +77,7 @@ const Hero = () => {
       },
     },
   };
-  let textOfAutoWriting = "A Front-End-Developer.";
+  let textOfAutoWriting = "A Full-Stack .Net Developer.";
   return (
     <div id="Hero" className="relative pb-10">
       {/* circles to ui */}
@@ -150,10 +153,10 @@ const Hero = () => {
               },
             }}
             className="capitalize font-bold text-[28px] my-2 sm:my-4  md:text-[2.8rem] heroName ">
-            hello i'm <span className="text-main">mostafa rayan</span>,
+            hello i'm <span className="text-main">Ahmed Faheem</span>,
           </motion.h2>
           <motion.span
-            className="capitalize font-bold autoWritingJop text-3xl md:text-[2.8rem] underline underColor"
+            className="capitalize font-bold autoWritingJop text-3xl md:text-[2.8rem] underline underColor sm:whitespace-nowrap"
             variants={spanVar}
             initial="initial"
             animate="animate">
@@ -178,11 +181,35 @@ const Hero = () => {
               },
             }}
             className="text-gray-600 dark:text-gray-300 leading-relaxed sm:text-lg my-6">
-            I am a graduate of the College of Computers and Information. During
-            my studies, I focused on website programming, complementing it with
-            personal learning. With over two years of experience in the field, I
-            aspire to be the expert who brings your front-ends to life.
+            I am an Electrical Engineering graduate specializing in Control and
+            Computer Systems, with a passion for software engineering and modern
+            web development. I build responsive, scalable, and user-friendly
+            applications using .NET, Angular, React, SQL, and modern web
+            technologies while continuously improving my skills through
+            real-world projects and lifelong learning.
           </motion.p>
+          <motion.div
+            initial={{
+              y: 40,
+              opacity: 0,
+            }}
+            animate={{
+              y: 0,
+              opacity: 1,
+              transition: {
+                delay: 2.7,
+              },
+            }}
+            className="flex items-center gap-2 mb-6 w-fit px-4 py-1.5 rounded-full border border-orange-500/20 dark:border-orange-500/40 bg-orange-500/5 dark:bg-orange-500/10 text-sm font-semibold tracking-wide"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+            </span>
+            <span className="text-main uppercase font-bold text-xs sm:text-sm">
+              Open to Work
+            </span>
+          </motion.div>
           <div className="flex items-center gap-3 mb-6 cursor-pointer">
             {dataSocial.map((item) => {
               return (
@@ -218,40 +245,79 @@ const Hero = () => {
               );
             })}
           </div>
-          <motion.a
-            target="_blank"
-            href={
-              "https://drive.google.com/file/d/1c89g-zTaWnQJnLaEx9ywRVv0PU24tNbU/view?usp=sharing"
-            }
-            initial={{
-              opacity: 0,
-              y: 40,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-              transition: {
-                delay: 3.9,
-              },
-            }}
-            whileHover={{
-              scale: 1.1,
-              transition: {
-                duration: 0.5,
-                type: "spring",
-                stiffness: 220,
-                damping: 6,
-              },
-            }}
-            className="flex cursor-pointer text-white   group bg-bgGradient w-fit px-6 py-[6px] rounded-full items-center gap-2 text-lg capitalize">
-            My Resume
-            <FaCloudDownloadAlt className="group-hover:animate-bounce" />
-          </motion.a>
-          <a
-            href="#About"
-            className="absolute left-1/2 -translate-x-1/2 bottom-0 cursor-pointer hidden lg:block ">
+          <div className="flex items-center gap-4 flex-wrap mt-2">
+            <motion.button
+              onClick={() => {
+                document.getElementById("contact").scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 3.7,
+                },
+              }}
+              whileHover={{
+                scale: 1.08,
+                transition: {
+                  duration: 0.5,
+                  type: "spring",
+                  stiffness: 220,
+                  damping: 6,
+                },
+              }}
+              className="flex cursor-pointer text-white group bg-bgGradient w-fit px-6 py-[8px] rounded-full items-center gap-2 text-lg capitalize font-medium shadow-md shadow-orange-500/20"
+            >
+              Contact Me
+              <FaPaperPlane className="text-lg group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+            </motion.button>
+            <motion.a
+              target="_blank"
+              href={
+                "https://drive.google.com/file/d/1SLaKsrAWWreDuOED_4eik44IxbsNYvCs/view?usp=sharing"
+              }
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 3.9,
+                },
+              }}
+              whileHover={{
+                scale: 1.08,
+                transition: {
+                  duration: 0.5,
+                  type: "spring",
+                  stiffness: 220,
+                  damping: 6,
+                },
+              }}
+              className="flex cursor-pointer text-orange-600 dark:text-orange-500 border-2 border-orange-600 dark:border-orange-500/60 hover:bg-bgGradient hover:text-white dark:hover:text-white hover:border-transparent dark:hover:border-transparent w-fit px-6 py-[6px] rounded-full items-center gap-2 text-lg capitalize font-medium transition-all duration-300 shadow-md shadow-black/5 dark:shadow-none"
+            >
+              Download CV
+              <FaDownload className="text-lg" />
+            </motion.a>
+          </div>
+          <Link
+            to="About"
+            smooth={true}
+            spy={true}
+            offset={-200}
+            duration={500}
+            className="absolute left-1/2 -translate-x-1/2 bottom-0 cursor-pointer hidden lg:block "
+          >
             <FaAngleDoubleDown className="animate-bounce text-3xl text-orange-600 " />
-          </a>
+          </Link>
         </div>
 
         {/* right */}

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { HiDotsHorizontal } from "react-icons/hi";
+import Logo from "../assets/logo_faheem_without_BG.png";
 
 const Navbar = () => {
   let [mode, setMode] = useState();
@@ -31,7 +32,7 @@ const Navbar = () => {
     }
   }
   return (
-    <header className="dark:bg-[#1d1d1d] bg-[#e5e5e5] header shadow-md shadow-[#f4280d1a] py-3 fixed top-0 left-0 w-full z-[999]">
+    <header className="dark:bg-[#1d1d1d] bg-[#e5e5e5] header shadow-md shadow-[#f4280d1a] py-2 fixed top-0 left-0 w-full z-[999]">
       <div className="container flex items-center relative justify-between flex-wrap">
         {/* logo */}
         <a
@@ -39,61 +40,22 @@ const Navbar = () => {
           onClick={() => {
             scrollTo({ top: 0 });
           }}>
-          <motion.svg
+          <motion.img
             initial={{
               rotate: -180,
+              opacity: 0,
             }}
             animate={{
               rotate: 0,
+              opacity: 1,
               transition: {
                 duration: 1,
               },
             }}
-            className="h-[50px] sm:h-[60px] object-contain "
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 586 677"
-            fill="none">
-            <motion.path
-              initial={{
-                opacity: 0,
-                pathLength: 0,
-              }}
-              animate={{
-                opacity: 1,
-                pathLength: 1,
-                transition: { duration: 2, ease: "easeInOut" },
-              }}
-              // fill-rule="evenodd"
-              // clip-rule="evenodd"
-              d="M1 1V458.5L241.5 675.5V306.5L293.25 284.136L345 306.5V675.5L585.5 458.5V1L293.25 146.959L1 1Z"
-              fill="url(#paint0_linear_183_81)"
-            />
-            <motion.path
-              initial={{
-                opacity: 0,
-                pathLength: 0,
-              }}
-              animate={{
-                opacity: 1,
-                pathLength: 1,
-                transition: { duration: 2, ease: "easeInOut" },
-              }}
-              d="M1 458.5H0.5V458.722L0.665049 458.871L1 458.5ZM1 1L1.2234 0.552685L0.5 0.191395V1H1ZM241.5 675.5L241.165 675.871L242 676.625V675.5H241.5ZM241.5 306.5L241.302 306.041L241 306.171V306.5H241.5ZM293.25 284.136L293.448 283.677L293.25 283.591L293.052 283.677L293.25 284.136ZM345 306.5H345.5V306.171L345.198 306.041L345 306.5ZM345 675.5H344.5V676.625L345.335 675.871L345 675.5ZM585.5 458.5L585.835 458.871L586 458.722V458.5H585.5ZM585.5 1H586V0.191395L585.277 0.552685L585.5 1ZM293.25 146.959L293.027 147.406L293.25 147.518L293.473 147.406L293.25 146.959ZM1.5 458.5V1H0.5V458.5H1.5ZM241.835 675.129L1.33495 458.129L0.665049 458.871L241.165 675.871L241.835 675.129ZM241 306.5V675.5H242V306.5H241ZM293.052 283.677L241.302 306.041L241.698 306.959L293.448 284.595L293.052 283.677ZM293.052 284.595L344.802 306.959L345.198 306.041L293.448 283.677L293.052 284.595ZM344.5 306.5V675.5H345.5V306.5H344.5ZM345.335 675.871L585.835 458.871L585.165 458.129L344.665 675.129L345.335 675.871ZM586 458.5V1H585V458.5H586ZM585.277 0.552685L293.027 146.511L293.473 147.406L585.723 1.44732L585.277 0.552685ZM0.776597 1.44732L293.027 147.406L293.473 146.511L1.2234 0.552685L0.776597 1.44732Z"
-              fill="black"
-            />
-            <defs>
-              <linearGradient
-                id="paint0_linear_183_81"
-                x1="293.25"
-                y1="1"
-                x2="293.25"
-                y2="675.5"
-                gradientUnits="userSpaceOnUse">
-                <stop stopColor="#FF4305" />
-                <stop offset="1" stopColor="#F58700" />
-              </linearGradient>
-            </defs>
-          </motion.svg>
+            src={Logo}
+            alt="Logo"
+            className="h-[70px] sm:h-[70px] object-contain"
+          />
         </a>
         {/* links on laptop */}
         <ul className="hidden items-center gap-[30px] md:flex">
@@ -115,7 +77,7 @@ const Navbar = () => {
               to="Hero"
               spy={true}
               smooth={true}
-              offset={-200}
+              offset={-85}
               duration={100}
               className="text-[1.3rem] transition-all  duration-300  cursor-pointer">
               Home
@@ -143,7 +105,7 @@ const Navbar = () => {
               to="About"
               smooth={true}
               spy={true}
-              offset={-200}
+              offset={-85}
               duration={100}
               className="text-[1.3rem]   transition-all duration-300 cursor-pointer">
               About me
@@ -170,7 +132,7 @@ const Navbar = () => {
               activeClass="active"
               to="Services"
               smooth={true}
-              offset={-200}
+              offset={-85}
               spy={true}
               duration={100}
               className="text-[1.3rem] transition-all duration-300 cursor-pointer">
@@ -198,11 +160,39 @@ const Navbar = () => {
               activeClass="active"
               to="Projects"
               smooth={true}
-              offset={-200}
+              offset={-85}
               spy={true}
               duration={100}
               className="text-[1.3rem] transition-all duration-300 cursor-pointer">
               Portfolio
+            </Link>
+            <HiDotsHorizontal
+              size={20}
+              className=" text-orange-500 absolute opacity-0 -bottom-8 group-hover:opacity-[1] group-hover:-bottom-4  transition-all duration-500 left-1/2 translate-x-[-50%]"
+            />
+          </motion.li>
+          <motion.li
+            className="relative group"
+            initial={{
+              translateY: 40,
+              opacity: 0,
+            }}
+            animate={{
+              translateY: 0,
+              opacity: 1,
+            }}
+            transition={{
+              delay: 1.2,
+            }}>
+            <Link
+              activeClass="active"
+              to="Certification"
+              smooth={true}
+              offset={-85}
+              spy={true}
+              duration={100}
+              className="text-[1.3rem] transition-all duration-300 cursor-pointer">
+              Certification
             </Link>
             <HiDotsHorizontal
               size={20}
@@ -350,11 +340,12 @@ const Navbar = () => {
                 }}
                 className="w-[95%] text-center  ">
                 <Link
+                  onClick={() => setOpenNav(false)}
                   activeClass="active"
                   to="Hero"
                   spy={true}
                   smooth={true}
-                  offset={-200}
+                  offset={-85}
                   duration={100}
                   className="text-[1.3rem]   transition-all duration-300  cursor-pointer">
                   Home
@@ -374,11 +365,12 @@ const Navbar = () => {
                 }}
                 className=" text-center ">
                 <Link
+                  onClick={() => setOpenNav(false)}
                   activeClass="active"
                   to="About"
                   spy={true}
                   smooth={true}
-                  offset={-200}
+                  offset={-85}
                   duration={100}
                   className="text-[1.3rem] transition-all duration-300 cursor-pointer">
                   About me
@@ -397,11 +389,12 @@ const Navbar = () => {
                   delay: 0.7,
                 }}>
                 <Link
+                  onClick={() => setOpenNav(false)}
                   activeClass="active"
                   to="Services"
                   spy={true}
                   smooth={true}
-                  offset={-200}
+                  offset={-85}
                   duration={100}
                   className="text-[1.3rem] transition-all duration-300 cursor-pointer">
                   Services
@@ -420,14 +413,39 @@ const Navbar = () => {
                   delay: 1,
                 }}>
                 <Link
+                  onClick={() => setOpenNav(false)}
                   activeClass="active"
                   to="Projects"
                   spy={true}
                   smooth={true}
-                  offset={-200}
+                  offset={-85}
                   duration={100}
                   className="text-[1.3rem] transition-all duration-300 cursor-pointer">
                   Portfolio
+                </Link>
+              </motion.li>
+              <motion.li
+                initial={{
+                  translateY: 40,
+                  opacity: 0,
+                }}
+                animate={{
+                  translateY: 0,
+                  opacity: 1,
+                }}
+                transition={{
+                  delay: 1.2,
+                }}>
+                <Link
+                  onClick={() => setOpenNav(false)}
+                  activeClass="active"
+                  to="Certification"
+                  spy={true}
+                  smooth={true}
+                  offset={-85}
+                  duration={100}
+                  className="text-[1.3rem] transition-all duration-300 cursor-pointer">
+                  Certification
                 </Link>
               </motion.li>
               <motion.button
@@ -441,6 +459,7 @@ const Navbar = () => {
                   delay: 1.3,
                 }}
                 onClick={() => {
+                  setOpenNav(false);
                   document.getElementById("contact").scrollIntoView({
                     behavior: "smooth",
                   });
