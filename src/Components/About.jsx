@@ -322,7 +322,7 @@ const About = () => {
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0, transition: { duration: 0.7 } }}
           viewport={{ once: true }}
-          className="space-y-5 text-center lg:text-start order-2 lg:order-1"
+          className="space-y-5 text-center lg:text-start order-1 lg:order-1"
         >
           <h3 className="text-main font-bold text-3xl">About Me</h3>
           <h2 className="text-[22px] w-full md:text-[32px] lg:text-[40px] md:leading-[54.6px]">
@@ -385,7 +385,7 @@ const About = () => {
           initial={{ opacity: 0, scale: 0.85 }}
           whileInView={{ opacity: 1, scale: 1, transition: { duration: 0.9 } }}
           viewport={{ once: true }}
-          className="order-1 lg:order-2 flex justify-center"
+          className="order-2 lg:order-2 flex justify-center"
         >
           <div ref={stageRef} className="solar-stage">
             <span className="solar-nebula" aria-hidden="true" />
